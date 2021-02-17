@@ -10,6 +10,13 @@ type User struct{
 	IsActive bool
 	
 }
+//method dari instant/ objek yg type User atau juga 
+// dlm bahsa lain method/ func didalam class User
+//note: go tidak mempunyai class, tetapi mempunyai struct
+func (user User) display() string {
+	return fmt.Sprintf("Nama : %s %s, Email : %s ", user.FristName, user.LastName, user.Email)
+
+}
 
 type Group struct {
 	Name string
@@ -44,6 +51,8 @@ func main() {
 	fmt.Println(display)
 	fmt.Println(display2)
 	displayGroup(group)
+	
+	fmt.Println(user.display())
 
 }
 
