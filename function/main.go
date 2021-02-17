@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt")
 
 func main() {
 	fmt.Println(add(10, 20))
@@ -26,6 +28,15 @@ func main() {
 	scores := []int{ 10, 5, 5, 10, 15 }
 	fmt.Println(sum(scores))
 	
+	
+	fmt.Println("=======")
+	result, err := calculate(10, 5, "g")
+	if err != nil {
+		fmt.Println("Terjadi Kesalahan")
+		fmt.Println(err.Error())
+	} else {
+		fmt.Println(result)
+	}
 	
 }
 
@@ -58,5 +69,23 @@ func sum(numbers [] int) int {
 	return total
 }
 
+//func mengembalikan error
+func calculate (number , numberTwo int, operation string ) (int, error){
+	var result int
+	var errorResult error
+	switch operation {
+	case "+":
+		result = number + numberTwo
+	case "-":
+		result = number - numberTwo
+	case "*":
+		result = number * numberTwo
+	case "/":
+		result = number / numberTwo
+	default :
+		errorResult = errors.New("Unknown Operation")
+	}
+	return result, errorResult
+}
 
 //note: nama func di awalai kapital maka publik sedangakan huruf kecil maka private
