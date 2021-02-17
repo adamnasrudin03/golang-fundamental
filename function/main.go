@@ -26,3 +26,5 @@ func rectangle(panjang, lebar int) (int, int) {
 	
 	return luas, keliling
 }
+
+//note: nama func di awalai kapital maka publik sedangakan huruf kecil maka private
