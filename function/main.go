@@ -21,6 +21,11 @@ func main() {
 	luas2, kel2 := rectangle2(10, 20)
 	fmt.Println("Predefined return value : ")
 	fmt.Println("Luas  = " , luas2, "Keliling = " , kel2)
+
+	fmt.Println("=======")
+	scores := []int{ 10, 5, 5, 10, 15 }
+	fmt.Println(sum(scores))
+	
 	
 }
 
@@ -43,5 +48,15 @@ func rectangle2(panjang, lebar int) (luas int, keliling int) {
 	
 	return 
 }
+
+//func menjumlah didalam array
+func sum(numbers [] int) int {
+	var total int;
+	for _, number := range numbers {
+		total = total + number
+	}
+	return total
+}
+
 
 //note: nama func di awalai kapital maka publik sedangakan huruf kecil maka private
