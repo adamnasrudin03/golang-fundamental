@@ -32,4 +32,15 @@ func main() {
 	fmt.Println(user2)
 	fmt.Println(user3)
 
+	display := displayUser(user)
+	display2 := displayUser(user2)
+	fmt.Println(display)
+	fmt.Println(display2)
+
+}
+
+func displayUser(user User) string {
+	result := fmt.Sprintf("Nama : %s %s, Email : %s ", user.FristName, user.LastName, user.Email)
+	return result
+
 }
