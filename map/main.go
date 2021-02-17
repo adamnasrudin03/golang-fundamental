@@ -18,6 +18,7 @@ func main() {
 	myMap := map[string] string{
 		"go": "go language", 
 		"java": "Kopi java",
+		"ruby": "Ruby on Rails",
 	}
 	
 	fmt.Println(myMap["java"])
@@ -27,5 +28,9 @@ func main() {
 	}
 
 	fmt.Println("======")
+	delete(myMap, "ruby")
 	
+	for key, value  := range myMap {
+			fmt.Println("key : " , key , ", value : " , value)
+	}
 }
