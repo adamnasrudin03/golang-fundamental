@@ -33,4 +33,16 @@ func main() {
 	for key, value  := range myMap {
 			fmt.Println("key : " , key , ", value : " , value)
 	}
+
+	fmt.Println("======")
+	// Pengecekan value map
+	//cara 1
+	value := myMap["phyton"]
+	fmt.Println(value)
+
+	fmt.Println("cara 2")
+	//cara 2
+	value, isAvalaiable := myMap["phyton"]
+	fmt.Println(isAvalaiable)
+	fmt.Println(value)
 }
