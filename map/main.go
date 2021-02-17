@@ -21,5 +21,11 @@ func main() {
 	}
 	
 	fmt.Println(myMap["java"])
+
+	for key, value  := range myMap {
+			fmt.Println("key : " , key , ", value : " , value)
+	}
+
+	fmt.Println("======")
 	
 }
