@@ -11,6 +11,13 @@ type User struct{
 	
 }
 
+type Group struct {
+	Name string
+	Admin User
+	Users []User
+	IsAvaliable bool
+}
+
 func main() {
 	user := User{}
 	user.ID = 1
@@ -28,18 +35,34 @@ func main() {
 	}
 	user3 := User{ 3, "Nama Depan", "Nama Belakang", "alifah@gmail.com", false}
 
-	fmt.Println(user)
-	fmt.Println(user2)
-	fmt.Println(user3)
+	users := []User{user, user2, user3}
+	group := Group{"Group Belajar", user, users, true}
+
 
 	display := displayUser(user)
 	display2 := displayUser(user2)
 	fmt.Println(display)
 	fmt.Println(display2)
+	displayGroup(group)
+
+}
+
+func displayGroup(group Group)  {
+	fmt.Println("=====")
+	fmt.Printf("Name : %s", group.Name )
+	fmt.Println("")
+	fmt.Printf("Member Count : %d", len(group.Users))
+	fmt.Println("")
+	fmt.Println("Name Users : ")
+
+	for _, user := range group.Users {
+		fmt.Println(user.FristName)
+	}
 
 }
 
 func displayUser(user User) string {
+	//Sprintf u/ pengembalian nilai string
 	result := fmt.Sprintf("Nama : %s %s, Email : %s ", user.FristName, user.LastName, user.Email)
 	return result
 
