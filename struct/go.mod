@@ -1,3 +1,3 @@
-module fundamental
+module struct
 
 go 1.16
