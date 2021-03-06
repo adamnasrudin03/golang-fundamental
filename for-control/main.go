@@ -9,6 +9,24 @@ func main() {
 	}
 	fmt.Println("================================")
 
+	//Break digunakan untuk menghentikan seluruh perulangan
+	for i := 0; i < 10; i++ {
+		if i == 5 {
+			break
+		}
+		fmt.Println("[break] Perulangan ke ", i)
+	}
+
+	//Continue adalah digunakan untuk menghentikan perulangan yang berjalan,
+	// dan langsung melanjutkan ke perulangan selanjutnya
+	for i := 0; i < 10; i++ {
+		if i % 2 == 0 {
+			continue
+		}
+		fmt.Println(" [continue]  Perulangan ke", i)
+	}
+	fmt.Println("================================")
+	
 	//while di go tdk ada jdi pake for
 	j := 1
 	for j < 3 {
