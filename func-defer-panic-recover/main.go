@@ -16,6 +16,29 @@ func runApplication(value int){
 	fmt.Println("Result", result)
 }
 
+
+
+func endApp(){
+	message := recover()
+	if message != nil {
+		fmt.Println("Error dengan message:", message)
+	}
+	fmt.Println("Aplikasi selesai")
+}
+//Panic func adalah func yang bisa kita gunakan untuk menghentikan program
+//Panic func biasanya dipanggil ketika terjadi error pada saat program kita berjalan
+//Saat panic func dipanggil, program akan terhenti, namun defer func tetap akan dieksekusi
+
+func runApp(iniError bool){
+	defer endApp()
+	if iniError {
+		panic("APLIKASI ERROR")
+	}
+	fmt.Println("Aplikasi berjalan")
+}
+
+
 func main() {
 	runApplication(10)
+	runApp(true)
 }
