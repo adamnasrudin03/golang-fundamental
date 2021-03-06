@@ -19,6 +19,8 @@ func runApplication(value int){
 
 
 func endApp(){
+	//Recover adalah function yang bisa kita gunakan untuk menangkap data panic
+	//Dengan recover proses panic akan terhenti, sehingga program akan tetap berjalan
 	message := recover()
 	if message != nil {
 		fmt.Println("Error dengan message:", message)
